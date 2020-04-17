@@ -1,53 +1,14 @@
-react-native实现一个简单的标签页组件
+import React from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Text,
+  StatusBar,
+  ScrollView,
+  TouchableOpacity
+} from 'react-native';
 
-### 前言
-
-`react-native-scroll-tab-page`是一个可滑动的标签页组件。源码[react-native-scroll-tab-page](https://github.com/liuboshuo/react-native-scroll-tab-page)
-
-相信很多伙伴都有写过滑动标签页的功能，react-native官方没有提供这个组件。但是很多大佬都写开发了自己的滑动标签页组件。其中有`react-native-scroll-tab`等。相信很多伙伴都用过。因此，我也开发一个属于自己的标签页组件，具体实现查看[源码](https://github.com/liuboshuo/react-native-scroll-tab-page)
-
-可以`clone`源码` cd Example/ `运行`Example`查看运行的效果。下面介绍使用方法
-
-### 提供的属性和方法介绍
-
-`ScrollTab `
-属性|说明|类型|默认值|必选
--|-|-|-|-
-tabs|tab数据|Array<{title:''}>|-|true
-page|当前选中的页面index|number|-|false
-style|组件样式(没有高度的话内容显示不出来)|object|-|false
-onTabClick|tab点击触发|(tab: Array<{title:''}>, index: number) => void|-|false
-onChange|tab变化时触发|(tab: Array<{title:''}>, index: number) => void|-|false
-renderTabBar|替换tab的tabBar|(tab: tabBarOptions) => React.ReactNode tabBarOptions见下面属性|-|false
-tabBarTextStyle|tab的字体样式|object|-|false
-tabBarActiveTextStyle|tab选中字体样式|object|-|false
-tabBarUnderlineStyle|tab选中下划线的样式|object|-|false
-
-方法|说明|参数
--|-|-|
-goToPage(index)|切换tab|跳转页面索引
-
-
-`ScrollTab .DefaultTabBar`
-属性|说明|类型|默认值|必选
--|-|-|-|-
-tabs|tab数据|Array<{title:''}>|-|true
-activeTab|当前选中的tab|number|-|true
-tabItemWidth|tab每项的宽(自定义tabbar的时候，必须告诉你的组件每个显示的宽度)|number|-|true
-goToTab|跳转tab|(index: number) => void|-|true
-onTabClick|tab点击触发|(tab: Array<{title:''}>, index: number) => void|-|false
-WIDTH|tab的宽|number|-|true
-
-
-### 使用方法
-
-```
-npm install -S react-native-scroll-tab-page
-```
-
-下面是3种使用方法
-
-```
 import ScrollTab from 'react-native-scroll-tab-page'
 class App extends React.Component {
 
@@ -171,8 +132,3 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-```
-运行效果图
-![QQ截图20200417144352.png](https://upload-images.jianshu.io/upload_images/2152694-edeb934c638e24c5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-又兴趣的同学可以看源码
